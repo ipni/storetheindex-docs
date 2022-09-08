@@ -5,6 +5,7 @@
 * [Overview](README.md)
 * [Technical Walkthrough](filecoin-network-indexer/technical-walkthrough.md)
 * [Terminology](filecoin-network-indexer/terminology.md)
+* [Querying Indexer Provider](filecoin-network-indexer/querying-indexer-provider.md)
 * [FAQ](filecoin-network-indexer/faq.md)
 
 ## Index Provider
