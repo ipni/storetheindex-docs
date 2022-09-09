@@ -5,7 +5,6 @@
 * [Overview](README.md)
 * [Technical Walkthrough](filecoin-network-indexer/technical-walkthrough.md)
 * [Terminology](filecoin-network-indexer/terminology.md)
-* [Querying Indexer Provider](filecoin-network-indexer/querying-indexer-provider.md)
 * [FAQ](filecoin-network-indexer/faq.md)
 
 ## Index Provider
@@ -17,6 +16,10 @@
 ## Ingestion
 
 * [Overview](ingestion/overview.md)
+
+## Query and Retrieve
+
+* [Querying Indexer Provider](query-and-retrieve/querying-indexer-provider.md)
 
 ## Running Indexer Node
 
