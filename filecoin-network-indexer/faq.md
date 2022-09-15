@@ -16,6 +16,8 @@ description: Frequently asked questions
   Retrieval clients such as [https://github.com/ipfs-shipyard/w3rc](https://github.com/ipfs-shipyard/w3rc) could connect to that peerID and attempt Graphsync retrieval.
 * **After getting response from cid.contact, how do I decode the metadata part?**\
   The metadata contains the ‘piece CID’ that the deal is in, and whether it is part of a verified deal. The response is a binary encoding since bytes get base64 encoded when passed through json / javascript. The javascript on cid.contact parses returned metadata, parsing logic can be found [here](https://github.com/willscott/cid.contact/blob/cd64dc5b0f2d56d9f232814fa066257a5fe2e506/index.html#L281-L294). Metadata golang code is at [https://github.com/filecoin-project/index-provider/blob/main/metadata/metadata.go](https://github.com/filecoin-project/index-provider/blob/main/metadata/metadata.go).
+* **How do I generate **_**ContextIds**_**?**\
+  ****It can be generated randomly, or if you have an existing higher level notion of group of CIDs that are likely to change together you can re-use that.
 * **What’s the requirement to run an indexer node? How do I run one?**\
   ****[StoretheIndex Github Repo](https://github.com/filecoin-project/storetheindex) has the implementation PL maintains for running Indexer node. It has the Kubernetes containers and docker config info.
 * **How much storage capacity is required for running indexer node?**\
