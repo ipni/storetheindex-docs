@@ -8,6 +8,8 @@ description: Frequently asked questions
   ****Index provider runs along with storage provider which sends advertisement to Indexer when deals are made. Indexer then syncs the advertisement to store the multi-hashes to provider record mappings. See more technical details in _Ingestion_ section and _Index Provider_ section.
 * **Will indexing impact my deal making process and performance?**\
   ****Not really, because the index providing process is not in the same process with deal making process. The index provider uses indices already generated as part of deal making and the impact is minimal and is not computationally heavy - only storing a tiny bit of information per deal. The Index generated are stored on [dagstore](https://github.com/filecoin-project/dagstore), and index provider code will generate ads from it to announce over pubsub to indexer.
+* **Is there a way to check how up-to-date/indexed my SP instance is? How do I check if my CID is  indexed?**\
+  You can use verify-ingest command here in [https://github.com/filecoin-project/index-provider](https://github.com/filecoin-project/index-provider)
 * **I found peerID through** [**https://cid.contact/**](https://cid.contact/)**, how to find minerId through peerID?**\
   ****[StateMarketParticipants](https://filecoin-shipyard.github.io/js-lotus-client/api/full-node-api/state.html#statemarketparticipants) will give you the list of providers by minerID.[ \
   StateMinerInfo](https://filecoin-shipyard.github.io/js-lotus-client/api/full-node-api/state.html#stateminerinfo) will give you its markets peerID. \
@@ -28,6 +30,8 @@ description: Frequently asked questions
   ****For PL’s implementation, we leverage Amazon EBS, we welcome different implementations.
 * **How are Indexer data stored across Indexer nodes?**\
   ****We are storing full replication of data with federation at the moment. We are looking into sharded / scaled design across indexer nodes to improve performance in the near future.
+* **As I setup indexer node, how do I connect with providers to store their index?**\
+  As long as your node is peered to the cid.contact indexer, you should get lotus announcements. Alternatively, if you bootstrap to the lotus filecoin mainnet nodes (default indexer configuration has this), then your indexer will receive gossip pubsub messages announcing updates from the storage providers publishing index content. The indexer will automatically add these providers to its list of known providers, and begin syncing with them.
 * **What is the request volume?**\
   ****At this time our retrieval request volume is about 10k QPS coming from Hydra (IPFS DHT), and AutoRetrieve also has \~1K QPS.
 * **What is the bandwidth and hardware requirement, is SSD good enough for running indexer node?**\
